@@ -1,0 +1,61 @@
+BIOMETRIC ATTENDANCE EXCEL FILE STRUCTURE GUIDE
+==============================================
+To ensure successful processing by the Workforce Analytics Biometric Engine, please format your uploaded spreadsheet according to the official structure detailed below.
+
+GENERAL WORKBOOK RULE:
+----------------------
+1. The engine processes the first worksheet of the workbook.
+2. The workbook layout should consist of a repeating 8-row sequence block for each employee. Do not skip headers, employee IDs or modify block row-structures.
+
+EMPLOYEE 8-ROW SEQUENCE MODEL:
+------------------------------
+Each employee block must contain exactly 8 structural rows in the following sequence:
+
+Row 1: EMPCODE & NAME METADATA HEADER ROW
+Col A: "Empcode"
+Col B: [Value, e.g., "0001" or numeric code]
+Col C: "Name"
+Col D: [Value, e.g., "John Smith" or full name]
+Col G: "Present"  | Col H: [Present Days Count]
+Col I: "WO"       | Col J: [Weekly Offs Count]
+Col K: "HL"       | Col L: [Holidays Count]
+Col M: "LV"       | Col N: [Approved Leaves Count]
+Col O: "Absent"   | Col P: [Absences Count]
+Col R: "Tot. Work+OT" | Col S: [Normal Hours + Overtime Hours e.g. "187:30"]
+Col U: "Total OT" | Col V: [Raw Overtime hours e.g. "15:00"]
+
+Row 2: DAY NUMBERS LABEL ROW
+Col A & B are empty labels or auxiliary.
+Col C to AH: Day numbers (1, 2, 3, 4, 5, ..., up to the end of the month, e.g. 30 or 31)
+
+Row 3: DAY NAMES LABEL ROW
+Col C to AH: Corresponding day names (e.g. "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
+
+Row 4: "IN" PUNCH TIME ROW
+Col A: "IN"
+Col C to AH: The employee's arrival hours in HH:MM format (e.g., "08:53" or "--:--" if absent or off)
+
+Row 5: "OUT" PUNCH TIME ROW
+Col A: "OUT"
+Col C to AH: The employee's departure hours in HH:MM format (e.g., "17:35" or "--:--" if absent or off)
+
+Row 6: "WORK" TOTAL COMPUTED REGULAR HOURS ROW
+Col A: "WORK"
+Col C to AH: The computed active working shift hours in Decimal or Hours (e.g., "08:30" or "00:00")
+
+Row 7: "OT" TOTAL HOURS OVERTIME ROW
+Col A: "OT"
+Col C to AH: The computed overtime duration in HH:MM format (e.g., "01:00" or "00:00")
+
+Row 8: "Status" COMPOSITION MARK ROW
+Col A: "Status"
+Col C to AH: Daily state (e.g. "P" for Present, "A" for Absent, "WO" for Weekly Off, "HL" for Holiday)
+
+
+SPACER & REPETITION:
+--------------------
+- An empty spacer row is required between successive employee blocks to retain formatting clarity.
+- The parser automatically scans and anchors onto the "Empcode" row key to begin evaluation.
+
+If you have any questions, please contact raw.biometrics@workforce-engine.internal
+==============================================
