@@ -1,4 +1,4 @@
-<img width="1600" height="830" alt="WhatsApp Image 2026-06-06 at 10 25 36 PM" src="https://github.com/user-attachments/assets/c87a93ae-7e46-4f13-b262-c13c83381054" /># Biometric Attendance & Payroll Analytics Platform
+ Biometric Attendance & Payroll Analytics Platform
 
 A workforce analytics and attendance intelligence platform designed to process biometric attendance exports, automate attendance calculations, manage exceptions, and generate management-ready workforce reports.
 
